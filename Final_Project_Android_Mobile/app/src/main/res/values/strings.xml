@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Final_Project_Android_Mobile</string>
+    <string name="app_name">Mi Restaurante</string>
     <string name="tvWelcome">Bienvenido a NombreApp!</string>
     <string name="etEmail">Correo</string>
     <string name="etContrasena">Contrasena</string>
     <string name="btLogin">Ingresar</string>
     <string name="btSingup">Registrarse</string>
     <string name="tvForgotPAss">Olvido su contrasena?</string>
-    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="title_activity_principal">MiRestaurante</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
