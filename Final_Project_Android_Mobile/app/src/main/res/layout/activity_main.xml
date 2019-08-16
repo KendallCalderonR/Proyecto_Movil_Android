@@ -32,7 +32,7 @@
                 app:tabMode="fixed"
                 android:id="@+id/tablayoutid"
                 app:tabTextColor="@color/colorWhite"
-                app:tabIndicatorColor="@color/colorGreen"
+                app:tabIndicatorColor="@color/colorAccent"
                 app:tabBackground="@color/colorPrimaryDark"/>
         <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
