@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Restaurante</string>
+    <string name="tvUsuario">Usuario</string>
+    <string name="tvContraseña">Contraseña</string>
+    <string name="btIngresar">Ingresar</string>
+    <string name="title_activity_menu_principal">MenuPrincipal</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="tvNombre">Nombre </string>
+    <string name="tvApellido">Apellido</string>
+    <string name="tvPuesto">Puesto</string>
+</resources>
