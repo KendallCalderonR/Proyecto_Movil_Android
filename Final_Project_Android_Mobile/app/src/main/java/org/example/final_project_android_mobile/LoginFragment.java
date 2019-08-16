@@ -41,8 +41,8 @@ public class LoginFragment extends Fragment {
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Login();
-            }
+                Login(view);
+           }
         });
 
         return view;
@@ -66,13 +66,12 @@ public class LoginFragment extends Fragment {
     }
 
 
-    public void Login(){
+    public void Login(View view){
 
         String email = etCorreo.getText().toString();
         String password = etPass.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {

@@ -33,7 +33,7 @@ public class SignupFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_signup, container, false);
         mAuth = FirebaseAuth.getInstance();
-        btSignUp = view.findViewById(R.id.btLogin);
+        btSignUp = view.findViewById(R.id.btSignUp);
         etCorreo = view.findViewById(R.id.etCorreo);
         etPass = view.findViewById(R.id.etPass);
 
