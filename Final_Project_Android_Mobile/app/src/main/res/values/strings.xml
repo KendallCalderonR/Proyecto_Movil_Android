@@ -7,6 +7,13 @@
     <string name="btSingup">Registrarse</string>
     <string name="tvForgotPAss">Olvido su contrasena?</string>
     <string name="title_activity_principal">MiRestaurante</string>
+    <string name="tvPrecio">Precio:</string>
+    <string name="tvDecripcion">Descrioción:</string>
+
+
+
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -20,4 +27,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_logoff">Logoff</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
