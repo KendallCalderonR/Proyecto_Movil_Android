@@ -10,10 +10,6 @@
     <string name="tvPrecio">Precio:</string>
     <string name="tvDecripcion">Descrioción:</string>
 
-
-
-
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -21,12 +17,26 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_orders">Ordenes</string>
+    <string name="menu_food">Productos</string>
+    <string name="menu_Carrito">Carrito</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_logoff">Logoff</string>
+
+    <string name="tvIdProducto">Id</string>
+    <string name="hi_IdProducto">Ej: 1</string>
+    <string name="tvNombreProducto">Nombre Producto</string>
+    <string name="hi_NombreProducto">Ej: Combo 3</string>
+    <string name="tvDescripcionProducto">Descripción</string>
+    <string name="hi_DescripcionProducto">Ej: Pollo frico acompañado con papas fritas y refresco</string>
+    <string name="tvPrecio2">Precio</string>
+    <string name="hi_Precio">Ej: 2500</string>
+    <string name="btCrearProducto">Crear Producto</string>
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

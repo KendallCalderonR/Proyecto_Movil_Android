@@ -92,16 +92,16 @@ public class PrincipalActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_Ordenes) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_food) {
             fm.beginTransaction().replace(R.id.contenedorFragmentos,new MenuFragment()).commit();
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Carrito) {
 
         } else if (id == R.id.nav_tools) {
 
         } else if (id == R.id.nav_share) {
-
+            fm.beginTransaction().replace(R.id.contenedorFragmentos,new ProductoFragment()).commit();
         } else if (id == R.id.nav_logoff) {
 
             mAuth.signOut();
