@@ -5,8 +5,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class Conexion {
 
-        private static AdminDB BASE=null;
+        private static AdminDB BASE = null;
         private static Context context;
+
+        private Conexion(){
+
+        }
 
         public static void setContext(Context context) {
             Conexion.context = context;

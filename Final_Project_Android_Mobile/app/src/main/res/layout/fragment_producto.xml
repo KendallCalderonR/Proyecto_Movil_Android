@@ -28,7 +28,9 @@
             android:id="@+id/btSeleccionarImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:background="@color/colorAccent"
+            android:text="@string/btSeleccionarImagen"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/etNombreProducto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivImagen"
@@ -46,29 +48,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <EditText
-            android:id="@+id/etPrecioProducto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:hint="@string/hi_Precio"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/ivImagen"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-        <EditText
-            android:id="@+id/etIdProducto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:hint="@string/hi_IdProducto"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toEndOf="@+id/ivImagen"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
             android:id="@+id/etDescripcionProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,8 +61,8 @@
 
         <ImageView
             android:id="@+id/ivImagen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,5 +116,28 @@
             android:textColor="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivImagen" />
+
+        <EditText
+            android:id="@+id/etIdProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="@string/hi_IdProducto"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/ivImagen"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etPrecioProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintStart_toEndOf="@+id/ivImagen"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

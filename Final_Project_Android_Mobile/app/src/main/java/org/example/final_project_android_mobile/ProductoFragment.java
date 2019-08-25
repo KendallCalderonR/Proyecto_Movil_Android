@@ -35,7 +35,7 @@ import java.io.InputStream;
 
 public class ProductoFragment extends Fragment {
 
-    private StorageReference mStorageRef;
+
 
     private static final int SELECT_FILE = 0;
     public EditText etIdProducto;
@@ -50,18 +50,20 @@ public class ProductoFragment extends Fragment {
     public Button btConsultar;
     private String nombreImagen;
     private Uri filePath;
+    private StorageReference mStorageRef;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_producto, container, false);
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+
         etIdProducto = view.findViewById(R.id.etIdProducto);
         ivImagenProducto = view.findViewById(R.id.ivImagen);
         etNombreProducto = view.findViewById(R.id.etNombreProducto);
         etPrecioProducto = view.findViewById(R.id.etPrecioProducto);
         etDescripcionProducto = view.findViewById(R.id.etDescripcionProducto);
+        mStorageRef = FirebaseStorage.getInstance().getReference();
         btCrearProducto = view.findViewById(R.id.btCrearProducto);
         btSeleccionarImagen = view.findViewById(R.id.btSeleccionarImagen);
 
