@@ -34,9 +34,9 @@
     <string name="hi_Precio">Ej: 2500</string>
     <string name="btCrearProducto">Crear Producto</string>
     <string name="btSeleccionarImagen">Seleccionar Imagen</string>
-
-
-
+    <string name="btBuscar">Buscar</string>
+    <string name="btGuardar">Guardar</string>
+    <string name="btDesactivar">Desactivar</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

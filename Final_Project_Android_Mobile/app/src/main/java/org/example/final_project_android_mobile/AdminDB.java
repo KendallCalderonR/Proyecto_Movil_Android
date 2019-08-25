@@ -13,7 +13,7 @@ public class AdminDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table producto(id int primary key,imagen text, nombre text,precio double,descripcion text)");
+        db.execSQL("create table producto(id int primary key,imagen text, nombre text,precio double,descripcion text,estado boolean)");
         db.execSQL("create table orden(id int primary key, nombrecliente text, total real, mesa int )");
         db.execSQL("create table producto_x_cliente(idCliente int, idProducto int, primary key (idCliente,idProducto))");
     }

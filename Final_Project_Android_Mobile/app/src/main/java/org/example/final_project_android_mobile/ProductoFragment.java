@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -100,6 +102,7 @@ public class ProductoFragment extends Fragment {
         registro.put("nombre",nombreProducto);
         registro.put("precio",precioProducto);
         registro.put("descripcion",descripcionProducto);
+        registro.put("estado",true);
 
         long n = conn.insert("producto",
                 null,registro);
