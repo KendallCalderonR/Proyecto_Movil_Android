@@ -23,10 +23,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private FirebaseAuth mAuth;
+    private TextView tvNavHCorreo;
+    private TextView tvNameUserNavH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,11 @@ public class PrincipalActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         mAuth = FirebaseAuth.getInstance();
+        //tvNavHCorreo = findViewById(R.id.tvNavHCorreo);
+        //tvNameUserNavH = findViewById(R.id.tvNameUserNavH);
+        //tvNavHCorreo.setText(mAuth.getCurrentUser().getEmail());
+        //tvNameUserNavH.setText("Email");
+
     }
 
     @Override
@@ -103,7 +111,7 @@ public class PrincipalActivity extends AppCompatActivity
         } else if (id == R.id.nav_tools) {
 
         } else if (id == R.id.nav_share) {
-            fm.beginTransaction().replace(R.id.contenedorFragmentos,new ProductoFragment()).commit();
+            fm.beginTransaction().replace(R.id.contenedorFragmentos,new MantenimientoProductosFragment()).commit();
         } else if (id == R.id.nav_logoff) {
 
             mAuth.signOut();
