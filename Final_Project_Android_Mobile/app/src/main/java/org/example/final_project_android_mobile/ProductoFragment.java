@@ -88,25 +88,28 @@ public class ProductoFragment extends Fragment {
     }
 
     private void insertar() {
-        SQLiteDatabase conn = Conexion.getEscritura();
+        //SQLiteDatabase conn = Conexion.getEscritura();
+        AdminDB conn = new AdminDB(getActivity(),"databaseFood",null,1);
+
+        SQLiteDatabase db = conn.getWritableDatabase();
 
         int idProducto = Integer.parseInt(etIdProducto.getText().toString());
-        String nombreImagen = String.valueOf(ivImagenProducto.getTag());
-        String nombreProducto = etNombreProducto.getText().toString();
+        String nombreImagen =  String.valueOf(ivImagenProducto.getTag());
+        String nombreProducto = "test";//etNombreProducto.getText().toString();
         double precioProducto  = Double.parseDouble(etPrecioProducto.getText().toString());
         String descripcionProducto = etDescripcionProducto.getText().toString();
 
         ContentValues registro = new ContentValues();
         registro.put("id",idProducto);
-        registro.put("imagen",nombreImagen);
+        registro.put("imagen","ham");//nombreImagen);
         registro.put("nombre",nombreProducto);
         registro.put("precio",precioProducto);
         registro.put("descripcion",descripcionProducto);
         registro.put("estado",true);
 
-        long n = conn.insert("producto",
-                null,registro);
-        SubirImagenFirebase();
+        long n = db.insert("producto",
+                "id",registro);
+        //SubirImagenFirebase();
         if (n==-1) {
             Toast.makeText(getContext(),
                     "No se insertó",
@@ -116,7 +119,7 @@ public class ProductoFragment extends Fragment {
                     "Se insertó",
                     Toast.LENGTH_SHORT).show();
         }
-        conn.close();
+       // conn.close();
     }
 
 
@@ -141,6 +144,7 @@ public class ProductoFragment extends Fragment {
                 if (resultCode == Activity.RESULT_OK) {
                     selectedImage = imageReturnedIntent.getData();
                     String selectedPath=selectedImage.getPath();
+                    filePath = selectedPath;
                     if (requestCode == SELECT_FILE) {
 
                         if (selectedPath != null) {
@@ -158,7 +162,7 @@ public class ProductoFragment extends Fragment {
                             // Ponemos nuestro bitmap en un ImageView que tengamos en la vista
                             ivImagenProducto.setImageBitmap(bmp);
                             nombreImagen = String.valueOf(ivImagenProducto.getTag());
-                            filePath = selectedImage.getPath();
+                            //filePath = selectedImage.getPath();
 
                         }
                     }
@@ -168,7 +172,7 @@ public class ProductoFragment extends Fragment {
     }
 
     public void SubirImagenFirebase(){
-        //Uri file = Uri.fromFile(new File(filePath));
+        //Uri file = Uri.fromFile(new File(filePath.getPath()));
 
         StorageReference riversRef = mStorageRef.child("ImagenesProductos/"+nombreImagen);
 

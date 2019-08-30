@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AdminDB conn = new AdminDB(this,"databaseFood",null,1);
+
         tabLayout = findViewById(R.id.tablayoutid);
         appBarLayout = findViewById(R.id.appbarid);
         viewPager = findViewById(R.id.viewpagerid);

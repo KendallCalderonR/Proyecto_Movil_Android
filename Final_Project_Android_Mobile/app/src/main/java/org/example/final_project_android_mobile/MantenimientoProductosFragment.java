@@ -102,10 +102,14 @@ public class MantenimientoProductosFragment extends Fragment {
 
     public void buscarProductoID(){
 
-        SQLiteDatabase conn = Conexion.getLectura();
+        //SQLiteDatabase conn = Conexion.getLectura();
+        AdminDB conn = new AdminDB(getActivity(),"databaseFood",null,1);
+
+        SQLiteDatabase db = conn.getReadableDatabase();
+
         int id = Integer.parseInt(etIdProductoModificar.getText().toString());
 
-        Cursor fila = conn.rawQuery("select * from producto where id ="+id,null);
+        Cursor fila = db.rawQuery("select * from producto where id ="+id,null);
 
 
         if (fila.moveToFirst()){
@@ -128,7 +132,8 @@ public class MantenimientoProductosFragment extends Fragment {
 
 
     public void modificar(){
-        SQLiteDatabase conn = Conexion.getEscritura();
+        AdminDB conn = new AdminDB(getActivity(),"databaseFood",null,1);
+        SQLiteDatabase db = conn.getWritableDatabase();
         int idProducto = Integer.parseInt(etIdProductoModificar.getText().toString());
         String nombreImagen = String.valueOf(ivImagenProductoModificar.getTag());
         String nombreProducto = etNombreProductoModificar.getText().toString();
@@ -142,9 +147,9 @@ public class MantenimientoProductosFragment extends Fragment {
         registro.put("precio",precioProducto);
         registro.put("descripcion",descripcionProducto);
         registro.put("estado",true);
-        SubirImagenFirebase();
+        //SubirImagenFirebase();
 
-        long n = conn.update("producto",registro,"id="+idProducto,null);
+        long n = db.update("producto",registro,"id="+idProducto,null);
         if (n==-1){
             Toast.makeText(getContext(),"No se modifico",Toast.LENGTH_LONG).show();
         }else {
