@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrdenFragment">
+    <resources>
+        <string-array android:name="bebidas_array">
+            <item>Coca-Cola</item>
+            <item>Coca-Cola Light</item>
+            <item>Coca-Cola Zero</item>
+            <item>Pepsi</item>
+            <item>Pepsi Light</item>
+            <item>Zarza</item>
+            <item>Fanta Uva</item>
+            <item>Fanta Naranja</item>
+            <item>Fanta Kolita</item>
+            <item>Guanabana</item>
+            <item>Mora</item>
+            <item>Sandia</item>
+            <item>Mango</item>
+            <item>Fresa</item>
+            <item>Cafe Negro</item>
+            <item>Cafe con Leche</item>
+            <item>Te Negro</item>
+            <item>Te Verde</item>
+            <item>Te de Manzanilla</item>
+        </string-array>
+    </resources>
+
+    <Spinner
+        android:id="@+id/bebidas_array"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <resources>
+        <string-array android:name="Acompañamientos_array">
+            <item>Papas</item>
+            <item>Salchipapas</item>
+            <item>Sopa de Cebolla</item>
+            <item>Sopa de Pollo</item>
+            <item>Sopa de Carne</item>
+            <item>Pure de papa</item>
+            <item>Tortillas</item>
+            <item>Tortillas de Queso</item>
+            <item>Platanos con Queso</item>
+            <item>Salchichon</item>
+        </string-array>
+    </resources>
+
+    <resources>
+        <string-array android:name="Extras_array">
+            <item>Natilla</item>
+            <item>Salsa de Tomate</item>
+            <item>Mayonesa</item>
+            <item>Mostaza</item>
+            <item>Leche</item>
+            <item>Crema para cafe</item>
+        </string-array>
+    </resources>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tvNuevaorden"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Ingrese la nueva orden"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Bebidas"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Acompañamientos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bebidas_array" />
+
+    <Button
+        android:id="@+id/btIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extras_array"
+        tools:text="@string/btIngresarOrden" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Extras"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acompañamientos_array" />
+
+    <Spinner
+        android:id="@+id/acompañamientos_array"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <Spinner
+        android:id="@+id/extras_array"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

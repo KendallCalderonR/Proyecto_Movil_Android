@@ -38,6 +38,24 @@
     <string name="btGuardar">Guardar</string>
     <string name="btDesactivar">Desactivar</string>
 
+    <string name="tvNuevaorden">Nueva Orden</string>
+    <string name="btIngresarOrden">Ingresar Orden</string>
+
+    <string-array name="bebidas_array">
+        <item>Coca-Cola</item>
+        <item>Coca-Cola Light</item>
+        <item>Coca-Cola Zero</item>
+        <item>Pepsi</item>
+        <item>Pepsi Light</item>
+        <item>Fanta Uva</item>
+        <item>Fanta Naranja</item>
+        <item>Fanta Kolita</item>
+        <item>Big-Cola</item>
+        <item>Zarsa</item>
+        <item>Dr.Pepper</item>
+        <item></item>
+    </string-array>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
