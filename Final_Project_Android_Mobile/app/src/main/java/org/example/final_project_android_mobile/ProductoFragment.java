@@ -51,6 +51,7 @@ public class ProductoFragment extends Fragment {
     public Button btEliminar;
     public Button btConsultar;
     private String nombreImagen;
+    private String imagePath;
     private Uri filePath;
     private StorageReference mStorageRef;
 
@@ -94,14 +95,14 @@ public class ProductoFragment extends Fragment {
         SQLiteDatabase db = conn.getWritableDatabase();
 
         int idProducto = Integer.parseInt(etIdProducto.getText().toString());
-        String nombreImagen =  String.valueOf(ivImagenProducto.getTag());
-        String nombreProducto = "test";//etNombreProducto.getText().toString();
+        nombreImagen =  String.valueOf(ivImagenProducto.getTag());
+        String nombreProducto = etNombreProducto.getText().toString();
         double precioProducto  = Double.parseDouble(etPrecioProducto.getText().toString());
         String descripcionProducto = etDescripcionProducto.getText().toString();
 
         ContentValues registro = new ContentValues();
         registro.put("id",idProducto);
-        registro.put("imagen","ham");//nombreImagen);
+        registro.put("imagen","ham");
         registro.put("nombre",nombreProducto);
         registro.put("precio",precioProducto);
         registro.put("descripcion",descripcionProducto);
@@ -152,6 +153,7 @@ public class ProductoFragment extends Fragment {
                             try {
                                 imageStream = getActivity().getContentResolver().openInputStream(
                                         selectedImage);
+
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
                             }
@@ -161,6 +163,8 @@ public class ProductoFragment extends Fragment {
 
                             // Ponemos nuestro bitmap en un ImageView que tengamos en la vista
                             ivImagenProducto.setImageBitmap(bmp);
+                            ivImagenProducto.setTag(filePath);
+                            imagePath = filePath.toString();
                             nombreImagen = String.valueOf(ivImagenProducto.getTag());
                             //filePath = selectedImage.getPath();
 
@@ -172,11 +176,13 @@ public class ProductoFragment extends Fragment {
     }
 
     public void SubirImagenFirebase(){
-        //Uri file = Uri.fromFile(new File(filePath.getPath()));
 
-        StorageReference riversRef = mStorageRef.child("ImagenesProductos/"+nombreImagen);
+       // String path = quitarPrimerasDos(imagePath+".jpg");
+        Uri file = Uri.fromFile(new File(imagePath+".jpg"));
 
-        riversRef.putFile(filePath)
+        StorageReference riversRef = mStorageRef.child("ImagenesProductos/"+nombreImagen+".jpg");
+
+        riversRef.putFile(file)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -193,6 +199,20 @@ public class ProductoFragment extends Fragment {
                     }
                 });
 
+    }
+
+    public String quitarPrimerasDos(String nombre){
+        String resultado = "";
+        char caracteres[] = new char[100];
+        for (int i = 0;i <= nombre.length();i++){
+            caracteres[i] = nombre.charAt(i);
+        }
+
+        for (int i = 2;i <= caracteres.length;i++){
+            resultado += caracteres[i];
+        }
+
+        return resultado;
     }
 
 

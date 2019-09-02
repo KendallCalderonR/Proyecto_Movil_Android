@@ -1,6 +1,5 @@
 package org.example.final_project_android_mobile.Adapter;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.example.final_project_android_mobile.MenuFragment;
+import org.example.final_project_android_mobile.MantenimientoProductosFragment;
 import org.example.final_project_android_mobile.R;
 import org.example.final_project_android_mobile.Model.producto;
 
@@ -58,14 +57,13 @@ public class productosAdapter extends RecyclerView.Adapter<productosAdapter.Prod
                 @Override
                 public void onClick(View view) {
 
-                    //String id = ID.getText().toString();
-                    //Bundle bundle = new Bundle();
-                    //AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                    //Fragment menuFragment = new MenuFragment();
-                    //bundle.putString("idUsuario",id);
-                    //menuFragment.setArguments(bundle);
-                    //activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragmentos, verUsuario).addToBackStack(null).commit();
-
+                    String id = ID.getText().toString();
+                    Bundle bundle = new Bundle();
+                    AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                    Fragment MantenimientoFragment = new MantenimientoProductosFragment();
+                    bundle.putString("idProducto",id);
+                    MantenimientoFragment.setArguments(bundle);
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragmentos, MantenimientoFragment).addToBackStack(null).commit();
                 }
             });
         }

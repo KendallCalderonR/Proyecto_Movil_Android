@@ -103,16 +103,10 @@ public class PrincipalActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_Ordenes) {
-            // Handle the camera action
+            fm.beginTransaction().replace(R.id.contenedorFragmentos,new OrdenesFragment()).commit();
         } else if (id == R.id.nav_food) {
             fm.beginTransaction().replace(R.id.contenedorFragmentos,new MenuFragment()).commit();
-        } else if (id == R.id.nav_Carrito) {
-
-        } else if (id == R.id.nav_tools) {
-
-        } else if (id == R.id.nav_share) {
-            fm.beginTransaction().replace(R.id.contenedorFragmentos,new MantenimientoProductosFragment()).commit();
-        } else if (id == R.id.nav_logoff) {
+        }  else if (id == R.id.nav_logoff) {
 
             mAuth.signOut();
             Intent intent = new Intent(this,MainActivity.class);

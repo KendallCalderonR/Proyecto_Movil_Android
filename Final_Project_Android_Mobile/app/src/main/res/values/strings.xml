@@ -6,9 +6,10 @@
     <string name="btLogin">Ingresar</string>
     <string name="btSingup">Registrarse</string>
     <string name="tvForgotPAss">Olvido su contrasena?</string>
-    <string name="title_activity_principal">MiRestaurante</string>
+    <string name="title_activity_principal">Mi Restaurante</string>
     <string name="tvPrecio">Precio:</string>
     <string name="tvDecripcion">Descrioción:</string>
+    <string name="tvID">ID:</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -41,22 +42,9 @@
     <string name="tvNuevaorden">Nueva Orden</string>
     <string name="btIngresarOrden">Ingresar Orden</string>
 
-    <string-array name="bebidas_array">
-        <item>Coca-Cola</item>
-        <item>Coca-Cola Light</item>
-        <item>Coca-Cola Zero</item>
-        <item>Pepsi</item>
-        <item>Pepsi Light</item>
-        <item>Fanta Uva</item>
-        <item>Fanta Naranja</item>
-        <item>Fanta Kolita</item>
-        <item>Big-Cola</item>
-        <item>Zarsa</item>
-        <item>Dr.Pepper</item>
-        <item></item>
-    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

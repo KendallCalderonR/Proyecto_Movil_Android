@@ -12,22 +12,10 @@
             android:id="@+id/nav_food"
             android:icon="@drawable/ic_food"
             android:title="@string/menu_food" />
-        <item
-            android:id="@+id/nav_Carrito"
-            android:icon="@drawable/ic_shopping"
-            android:title="@string/menu_Carrito" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Cuenta">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
             <item
                 android:id="@+id/nav_logoff"
                 android:icon="@drawable/ic_logoff"

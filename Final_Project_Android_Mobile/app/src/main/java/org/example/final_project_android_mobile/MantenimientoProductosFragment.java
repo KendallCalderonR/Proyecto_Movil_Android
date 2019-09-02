@@ -38,6 +38,7 @@ import java.io.InputStream;
 
 public class MantenimientoProductosFragment extends Fragment {
 
+    private static String idProducto;
     private StorageReference mStorageRef;
     public EditText etIdProductoModificar;
     public ImageView ivImagenProductoModificar;
@@ -57,13 +58,14 @@ public class MantenimientoProductosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mantenimiento_productos, container, false);
-
+        idProducto = getArguments().getString("idProducto");
         mStorageRef = FirebaseStorage.getInstance().getReference();
         etIdProductoModificar = view.findViewById(R.id.etIdProductoModificar);
         ivImagenProductoModificar = view.findViewById(R.id.ivImagenProdModificar);
         etNombreProductoModificar = view.findViewById(R.id.etNombreProdModificar);
         etPrecioProductoModificar = view.findViewById(R.id.etPrecioProductoModificar);
         etDescripcionProductoModificar = view.findViewById(R.id.etDescripcionProductoModificar);
+        etIdProductoModificar.setText(idProducto);
         btBuscarProducto = view.findViewById(R.id.btBuscar);
         btSeleccionarImagenModificar = view.findViewById(R.id.btCargarImagenModificar);
         btGuardarProducto = view.findViewById(R.id.btGuardar);
@@ -160,13 +162,14 @@ public class MantenimientoProductosFragment extends Fragment {
     }
 
     public void desactivar(){
-        SQLiteDatabase conn = Conexion.getEscritura();
+        AdminDB conn = new AdminDB(getActivity(),"databaseFood",null,1);
+        SQLiteDatabase db = conn.getWritableDatabase();
         int idProducto = Integer.parseInt(etIdProductoModificar.getText().toString());
 
         ContentValues registro = new ContentValues();
         registro.put("estado",false);
 
-        long n = conn.update("producto",registro,"id="+idProducto,null);
+        long n = db.update("producto",registro,"id="+idProducto,null);
         if (n==-1){
             Toast.makeText(getContext(),"Error al desactivar",Toast.LENGTH_LONG).show();
         }else {
@@ -271,6 +274,7 @@ public class MantenimientoProductosFragment extends Fragment {
             }
         });
     }
+
 
 
 }
